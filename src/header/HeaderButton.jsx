@@ -1,6 +1,7 @@
 import { Box,Button,makeStyles, Typography,Badge,withStyles } from "@material-ui/core";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import {Link} from  'react-router-dom';
 const useStyle = makeStyles({
     login:{
         background:'#FFFFFF',
@@ -17,7 +18,10 @@ const useStyle = makeStyles({
         fontSize:12,
         '&>*':{
             marginRight: 50,
-            aliginItems:'center'
+            aliginItems:'center',
+            textDecoration: 'none',
+            color:'#fff'
+             
         }
 
     },
@@ -36,14 +40,14 @@ const HeaderButton = ()=>{
    return (
        
        <Box className={classes.wapper}>
-           <Button variant="contained" className={classes.login}>Login</Button>
-           <TypoGraphy style={{marginTop:5,fontsize:12}}>More</TypoGraphy>
-           <Box className={classes.container}>
+           <Link><Button variant="contained" className={classes.login}>Login</Button></Link>
+           <Link><TypoGraphy style={{marginTop:5,fontsize:12}}>More</TypoGraphy></Link>
+           <Link to="/Cart" className={classes.container}>
                 <Badge badgeContent={2} color="secondary">
                     <ShoppingCartIcon style={{marginTop:2}}></ShoppingCartIcon>
                </Badge>
-               <TypoGraphy style={{marginTop:5,marginLeft:10, fontsize:12}}> Cart</TypoGraphy>
-           </Box>
+               <TypoGraphy style={{marginTop:5,marginLeft:10, fontsize:12}}>Cart</TypoGraphy>
+           </Link>
        </Box>
 
 
