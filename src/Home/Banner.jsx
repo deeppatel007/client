@@ -15,6 +15,7 @@ const Banner = () =>{
     const classes = useStyle();
     return(
         <Carousel
+       
         autoPlay={true}
         animation = 'slide'
         indicators={false}
